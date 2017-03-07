@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 
 public class main {
 	
@@ -143,12 +146,32 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String input = "for * (";
+		//String input = "for * (";
+		
+		//lectura archivo linea por linea
+		String input = args[0];
+	    try {
+	      FileReader fr = new FileReader(input);
+	      BufferedReader br = new BufferedReader(fr);
+	 
+	      String linea;
+	      while((linea = br.readLine()) != null)
+	        //System.out.println(linea);
+	    	  
+	    	// Create tokens and print tyhem
+	  	    ArrayList<Token> tokens = lex(input);
+	  	    for (Token token : tokens)
+	  	      System.out.println(token);
+	 
+	      fr.close();
+	    }
+	    catch(Exception e) {
+	      System.out.println("Excepcion leyendo fichero "+ input + ": " + e);
+	    }
+		
+		
 
-	    // Create tokens and print tyhem
-	    ArrayList<Token> tokens = lex(input);
-	    for (Token token : tokens)
-	      System.out.println(token);
+	    
 	    
 	}
 
