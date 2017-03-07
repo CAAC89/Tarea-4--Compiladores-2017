@@ -6,7 +6,11 @@ public class main {
 	
 	public static enum TokenType {
 	    // Token types cannot have underscores
-	    NUMBER("-?[0-9]+"), BINARYOP("[*|/|+|-]"), WHITESPACE("[ \t\f\r\n]+");
+	    NUMBER("-?[0-9]+"), BINARYOP("[*|/|+|-]"), WHITESPACE("[ \t\f\r\n]+"),PROGRAM("PROGRAM"),
+	    BEGIN("BEGIN"),END("END"),VAR("VAR"),IF("IF"),THEN("THEN"),ELSE("ELSE"),WHILE("WHILE"),
+	    WriteLn("WriteLn"),Write("Write"),ReadLn("ReadLn"),abs("abs"),sqrt("sqrt"),DO("do"),
+	    uses("uses"),MOD("MOD"),INC("INC"),FOR("for"),to("to"),LeftParent("("),RightParent(")"),
+	    pc(";"),c(","),i(":"),INTEGER("INTEGER"),ii(":="),REAL("REAL"),iii("=");
 
 	    public final String pattern;
 
@@ -61,7 +65,7 @@ public class main {
 
 		String input = "11 + 22 - 33";
 
-	    // Create tokens and print them
+	    // Create tokens and print tyhem
 	    ArrayList<Token> tokens = lex(input);
 	    for (Token token : tokens)
 	      System.out.println(token);
