@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.BufferedReader;
@@ -7,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class main {
+public class Main {
 	
 	public static enum TokenType {
 	    // Token types cannot have underscores
@@ -157,7 +158,8 @@ public class main {
 	    }
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		String input = "11 + 22 - 33";
+
 
 	
 	    // Create tokens and print tyhem
@@ -167,4 +169,6 @@ public class main {
 	    
 	}
 
+
+	
 }
