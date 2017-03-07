@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 
 public class main {
@@ -142,36 +144,26 @@ public class main {
 
 		    return tokens;
 		  }
+	  
+	  
+	  public static void muestraContenido(String archivo) throws FileNotFoundException, IOException {
+	        String cadena;
+	        FileReader f = new FileReader(archivo);
+	        BufferedReader b = new BufferedReader(f);
+	        while((cadena = b.readLine())!=null) {
+	            System.out.println(cadena);
+	        }
+	        b.close();
+	    }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//String input = "for * (";
-		
-		//lectura archivo linea por linea
-		String input = args[0];
-	    try {
-	      FileReader fr = new FileReader(input);
-	      BufferedReader br = new BufferedReader(fr);
-	 
-	      String linea;
-	      while((linea = br.readLine()) != null)
-	        //System.out.println(linea);
-	    	  
-	    	// Create tokens and print tyhem
-	  	    ArrayList<Token> tokens = lex(input);
-	  	    for (Token token : tokens)
-	  	      System.out.println(token);
-	 
-	      fr.close();
-	    }
-	    catch(Exception e) {
-	      System.out.println("Excepcion leyendo fichero "+ input + ": " + e);
-	    }
-		
-		
-
-	    
+	
+	    // Create tokens and print tyhem
+	    ArrayList<Token> tokens = lex(input);
+	    for (Token token : tokens)
+	      System.out.println(token);
 	    
 	}
 
