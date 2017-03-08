@@ -4,7 +4,7 @@ public enum TokenType {
 	NUMBER("-?[0-9]+"),
 	BINARYOP("[*|/|+|-]"),
 	WHITESPACE("[ \t\f\r\n]+"),
-//	ID("[a-zA-Z][a-zA-Z0-9]*"),
+	ID("[_a-zA-Z][_a-zA-Z0-9]*"),
 	PROGRAM("PROGRAM"),
 	BEGIN("BEGIN"),
 	END("END"),
