@@ -5,6 +5,8 @@ public enum TokenType {
 	BINARYOP("[*|/|+|-]"),
 	WHITESPACE("[ \t\f\r\n]+"),
 	ID("[_a-zA-Z][_a-zA-Z0-9]*"),
+	STRING("(\'(.*?)\')"),
+	COMMENT("\\(\\*(.*?)\\*\\)"),
 	PROGRAM("PROGRAM"),
 	BEGIN("BEGIN"),
 	END("END"),

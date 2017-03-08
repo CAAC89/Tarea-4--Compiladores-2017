@@ -100,8 +100,14 @@ public class Lexer {
 			} else if (matcher.group(TokenType.iii.name()) != null) {
 				tokens.add(new Token(TokenType.iii, matcher.group(TokenType.iii.name())));
 				continue;
-			}else if (matcher.group(TokenType.ID.name()) != null) {
+			} else if (matcher.group(TokenType.ID.name()) != null) {
 				tokens.add(new Token(TokenType.ID, matcher.group(TokenType.ID.name())));
+				continue;
+			} else if (matcher.group(TokenType.STRING.name()) != null) {
+				tokens.add(new Token(TokenType.STRING, matcher.group(TokenType.STRING.name())));
+				continue;
+			} else if (matcher.group(TokenType.COMMENT.name()) != null) {
+				tokens.add(new Token(TokenType.COMMENT, matcher.group(TokenType.COMMENT.name())));
 				continue;
 			}
 
